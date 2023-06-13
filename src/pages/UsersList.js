@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const UsersList = ({users}) => {
@@ -26,15 +27,18 @@ const UsersList = ({users}) => {
       <h2>User List</h2>
       <ul>
         {users.map((user) => (
-
+         
           <li key={user.id} >
             <p>Name: {user.name}</p>
             <p>Username: {user.username}</p>
             <p>Email: {user.email}</p>
             <p>Phone: {user.phone}</p>
+           <Link to={`/${user.id}`} ><button>About User</button></Link>  <button>Add to favorites</button> <button>Remove from favorites</button>
           </li>
+         
         ))}
       </ul>
+      
     </div>
   );
 };

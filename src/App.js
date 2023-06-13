@@ -1,7 +1,7 @@
 import './App.css';
 import UsersList from './pages/UsersList';
 import UsersDetails from './pages/UsersDetails';
-import Layout from './pages/Layout';
+// import Layout from './pages/Layout';
 import { useEffect,useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
@@ -23,14 +23,14 @@ function App() {
   };
   return (
     <div className="App">
-
-<Routes>
-  <Route path="/" element={<UsersList users={users} />}></Route>
-  <Route
-      path="usersDetail"
-      element={<UsersDetails />}
-    />
+      <BrowserRouter>
+  <Routes>
+  <Route path="/" element={<UsersList users={users} />} />
+  <Route path="/:userId" element={<UsersDetails/>} />
 </Routes>
+</BrowserRouter>
+
+  
     </div>
   );
 }
