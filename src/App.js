@@ -1,7 +1,7 @@
 import './App.css';
 import UsersList from './pages/UsersList';
 import UsersDetails from './pages/UsersDetails';
-// import Layout from './pages/Layout';
+import FavouriteItems from './pages/FavouriteItems';
 import { useEffect,useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
@@ -27,6 +27,7 @@ function App() {
   <Routes>
   <Route path="/" element={<UsersList users={users} />} />
   <Route path="/:userId" element={<UsersDetails/>} />
+  <Route path="/favouritesItem" element={<FavouriteItems/>} />
 </Routes>
 </BrowserRouter>
 
